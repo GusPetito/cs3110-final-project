@@ -1,5 +1,7 @@
+open Game
+
 exception UnImplemented
 
-type board = list Piece.t
+type t = Piece.t list
 
 let board = raise UnImplemented
