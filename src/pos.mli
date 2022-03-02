@@ -1,3 +1,5 @@
+exception InvalidCommand
+
 type t
 
 val fst: t -> int
@@ -13,11 +15,12 @@ val minus: t -> t -> t
 (** [multiply pos1 scalar] is the scalar multiplication of pos1 with scalar*)
 val multiply: t -> int -> t
 
-(** [non_zero_entry pos1] is the first non-zero entry in pos1 *)
+(** [non_zero_entry pos1] is the first non-zero entry in pos1, or 0 if both are 0 *)
 val non_zero_entry: t -> int
 
 (** [make_ones pos1] makes all the non_zero entries either one or negative one, depending on the sign*)
 val make_ones: t -> t
 
-(** [parse_command command] parses the string command into a position *)
+(** [parse_command command] parses the string command into a position.
+Raises: InvalidCommand if the command is not well-formed, i.e. is not of the form "ax" for character a \in [a-h] and integer x \in [1-8] *)
 val parse_command: string -> t

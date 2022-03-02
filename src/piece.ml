@@ -7,6 +7,11 @@ type piece_type = Pawn | Rook | Knight | Bishop | King | Queen
 
 type t = {role : piece_type; pos : Pos.t; alive : bool; has_moved : bool}
 
+let get_pos piece = piece.pos
+
+let is_alive piece = piece.alive
+
+
 (* Helper function for checking if one block is uninhabited in the current board*)
 let check_block_covered pos curr_board_pos = List.fold_left (fun acc curr_pos -> curr_pos <> pos && acc) true curr_board_pos
 
