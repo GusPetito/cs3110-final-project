@@ -20,7 +20,3 @@ val non_zero_entry: t -> int
 
 (** [make_ones pos1] makes all the non_zero entries either one or negative one, depending on the sign*)
 val make_ones: t -> t
-
-(** [parse_command command] parses the string command into a position.
-Raises: InvalidCommand if the command is not well-formed, i.e. is not of the form "ax" for character a \in [a-h] and integer x \in [1-8] *)
-val parse_command: string -> t
